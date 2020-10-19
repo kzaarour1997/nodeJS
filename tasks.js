@@ -97,7 +97,7 @@ function quit(){
  * @returns {void}
  */
 function help(){
-  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> says hello \n **quit/exit** --> quits app")
+  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> says hello! \n **hello+(input name)** --> says (hello name!) \n **quit/exit** --> quits app")
   
   
   }
