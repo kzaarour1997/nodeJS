@@ -81,10 +81,10 @@ function quit(){
   process.exit();
 }
 function help(){
-console.log("These are my supported commands:\n **help** --> Displays help menu \n")
-
-
-}
+  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> displys hello \n **quit/exit** --> quits app")
+  
+  
+  }
 
 // The following line starts the application
 startApp("Khalil Zaarour")
