@@ -29,16 +29,20 @@ function startApp(name){
  * 
  * The text received would be "batata"
  * This function  then directs to other functions
- * 
+ * @param  {string} texxt
  * @param  {string} text data typed by the user
  * @returns {void}
  */
 function onDataReceived(text) {
+  st=text.startsWith("hello");
   if (text === 'quit\n'|| text ==='exit\n') {
     quit();
   }
-  else if(text === 'hello\n'){
-    hello();
+  else if(st)
+  {
+    
+    hello(text);
+    
   }
   else if(text === 'help\n'){
     help();
@@ -66,8 +70,15 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-function hello(){
+function hello(texxt){
+  var s2=texxt.split(" ")
+  var rep=texxt.replace("\n","")
+  if(Boolean(s2[1])==false){
   console.log('hello!')
+  }else {
+    console.log(rep+"!")
+  }
+
 }
 
 
