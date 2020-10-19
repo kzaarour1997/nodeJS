@@ -80,8 +80,9 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+
 function help(){
-  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> displys hello \n **quit/exit** --> quits app")
+  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> says hello \n **quit/exit** --> quits app")
   
   
   }
