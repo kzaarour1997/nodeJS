@@ -34,9 +34,11 @@ function startApp(name){
  * @returns {void}
  */
 li=["do some exercise","buy some groceries"];
+
 function onDataReceived(text) {
   start=text.startsWith("hello");
   start1=text.startsWith("add");
+  start2=text.startsWith("remove");
 
   if (text === 'quit\n'|| text ==='exit\n') {
     quit();
@@ -61,8 +63,8 @@ function onDataReceived(text) {
     
     add(text);
   }
-  else if(text === 'remove\n'){
-    remove();
+  else if(start2){
+    remove(text);
   }
   else{
     unknownCommand(text);
@@ -94,7 +96,7 @@ function hello(texxt){
   if(Boolean(s2[1])==false){
   console.log('hello!')
   }else {
-    console.log(rep+"!")
+    console.log(rep.trim()+"!")
   }
 
 }
@@ -115,7 +117,7 @@ function quit(){
  * @returns {void}
  */
 function help(){
-  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> says hello! \n **hello+(input name)** --> says (hello name!) \n **quit/exit** --> quits app")
+  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> says hello! \n **hello+(input name)** --> says (hello name!) \n **quit/exit** --> quits app \n **list**-->displays your tasks \n **add+(the task you enter)**--> adds task to list \n **remove+(task number)--> Delets task from list")
   
   
   }
@@ -135,6 +137,15 @@ function help(){
     }
 
    
+  }function remove(texxt) {
+    var s3=texxt.split(" ")
+   var a= parseInt(s3[1]);
+   if(Number.isInteger(a)){
+   for(var i=0;i<li.length;i++){
+    if(a===i)
+    li.splice(a,1);
+   }
+  }else{console.log("Please Enter remove + a number")}
   }
 
 // The following line starts the application
