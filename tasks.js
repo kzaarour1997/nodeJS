@@ -33,12 +33,15 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
+var task=["tomato","batata"];
 function onDataReceived(text) {
-  st=text.startsWith("hello");
+  start=text.startsWith("hello");
+  start1=text.startsWith("add");
+
   if (text === 'quit\n'|| text ==='exit\n') {
     quit();
   }
-  else if(st)
+  else if(start)
   {
     
     hello(text);
@@ -47,9 +50,19 @@ function onDataReceived(text) {
   else if(text === 'help\n'){
     help();
   }
+  else if(text === 'list\n'){
+    list();
+  }
+  else if(start1){
+    add();
+  }
+  else if(text === 'remove\n'){
+    remove();
+  }
   else{
     unknownCommand(text);
   }
+
 }
 
 
@@ -100,6 +113,20 @@ function help(){
   console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> says hello! \n **hello+(input name)** --> says (hello name!) \n **quit/exit** --> quits app")
   
   
+  }
+  function add(text) {
+    task.push(text)
+  }
+  function list(task){
+    li=["batata","tomato"];
+    for(var i=0;i<li.length;i++){
+
+      console.log(i+"-"+li[i])
+
+
+    }
+
+   console.table(task);
   }
 
 // The following line starts the application
