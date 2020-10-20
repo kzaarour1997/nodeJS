@@ -39,6 +39,7 @@ function onDataReceived(text) {
   start=text.startsWith("hello");
   start1=text.startsWith("add");
   start2=text.startsWith("remove");
+  start3=text.startsWith("edit");
 
   if (text === 'quit\n'|| text ==='exit\n') {
     quit();
@@ -65,6 +66,10 @@ function onDataReceived(text) {
   }
   else if(start2){
     remove(text);
+  }
+  else if(start3){
+    
+    edit(text);
   }
   else{
     unknownCommand(text);
@@ -150,5 +155,23 @@ function help(){
   }else{console.log("error:Please Enter remove + number")}
   }
 
+  function edit(texxt) {
+    var s4=texxt.split(" ")
+   var a= parseInt(s4[1]);
+    var sub= texxt.substr(7,texxt.length);
+    var rep=sub.replace("\n","")
+    if(Number.isInteger(a)){
+      for(var i=0;i<li.length-1;i++){
+       if(a-1===i){
+         var b=a-1;
+         li.splice(b, 1,rep);
+       }
+      }
+      
+      }else{console.log("error:Please Enter edit + number + new task")}
+    }
+    
+    
+  
 // The following line starts the application
 startApp("Khalil Zaarour")
