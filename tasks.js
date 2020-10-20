@@ -33,7 +33,7 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
-var task=["tomato","batata"];
+li=["do some exercise","buy some groceries"];
 function onDataReceived(text) {
   start=text.startsWith("hello");
   start1=text.startsWith("add");
@@ -52,9 +52,14 @@ function onDataReceived(text) {
   }
   else if(text === 'list\n'){
     list();
+  }else if(text==='add\n'){
+    
+    console.log("***error you have to add something***");
   }
+  
   else if(start1){
-    add();
+    
+    add(text);
   }
   else if(text === 'remove\n'){
     remove();
@@ -115,10 +120,13 @@ function help(){
   
   }
   function add(text) {
-    task.push(text)
+    sub= text.substr(4,text.length);
+    
+    li.push(sub)
   }
-  function list(task){
-    li=["batata","tomato"];
+  
+  function list(){
+    
     for(var i=0;i<li.length;i++){
 
       console.log(i+"-"+li[i])
@@ -126,7 +134,7 @@ function help(){
 
     }
 
-   console.table(task);
+   
   }
 
 // The following line starts the application
