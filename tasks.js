@@ -117,7 +117,7 @@ function quit(){
  * @returns {void}
  */
 function help(){
-  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> says hello! \n **hello+(input name)** --> says (hello name!) \n **quit/exit** --> quits app \n **list**-->displays your tasks \n **add+(the task you enter)**--> adds task to list \n **remove+(task number)--> Delets task from list")
+  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> says hello! \n **hello+(input name)** --> says (hello name!) \n **quit/exit** --> quits app \n **list**-->displays your tasks \n **add+(the task you enter)**--> adds task to list \n **remove+(task number)--> Deletes task from list")
   
   
   }
@@ -145,7 +145,7 @@ function help(){
     if(a===i)
     li.splice(a,1);
    }
-  }else{console.log("Please Enter remove + a number")}
+  }else{console.log("error:Please Enter remove + number")}
   }
 
 // The following line starts the application
