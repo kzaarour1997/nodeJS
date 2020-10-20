@@ -131,7 +131,7 @@ function help(){
     
     for(var i=0;i<li.length;i++){
 
-      console.log(i+"-"+li[i])
+      console.log(i+1+"-"+li[i])
 
 
     }
@@ -142,8 +142,10 @@ function help(){
    var a= parseInt(s3[1]);
    if(Number.isInteger(a)){
    for(var i=0;i<li.length;i++){
-    if(a===i)
-    li.splice(a,1);
+    if(a-1===i){
+      var b=a-1;
+    li.splice(b,1);
+    }else {console.log("error: the task number you entered doesnt exist")}
    }
   }else{console.log("error:Please Enter remove + number")}
   }
