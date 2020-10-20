@@ -33,13 +33,16 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
-li=["do some exercise","buy some groceries"];
+li=["do some exercise","buy some groceries","Water plants"];
+dn = ["✓", "✓", " "];
 
 function onDataReceived(text) {
   start=text.startsWith("hello");
   start1=text.startsWith("add");
   start2=text.startsWith("remove");
   start3=text.startsWith("edit");
+  start4=text.startsWith("check");
+  start5=text.startsWith("uncheck");
 
   if (text === 'quit\n'|| text ==='exit\n') {
     quit();
@@ -70,6 +73,14 @@ function onDataReceived(text) {
   else if(start3){
     
     edit(text);
+  }
+  else if(start4){
+    
+    check(text);
+  }
+  else if(start5){
+    
+    uncheck(text);
   }
   else{
     unknownCommand(text);
@@ -136,7 +147,7 @@ function help(){
     
     for(var i=0;i<li.length;i++){
 
-      console.log(i+1+"-"+li[i])
+      console.log(i+1+"-"+" "+dn[i]+" "+li[i])
 
 
     }
@@ -170,7 +181,22 @@ function help(){
       
       }else{console.log("error:Please Enter edit + number + new task")}
     }
-    
+    function check(x) {
+      z=x.split(" ");
+      var a= parseInt(z[1]);
+      if(Number.isInteger(a)){
+      dn[a - 1] = "✓";
+      list();
+    }
+    }
+    function uncheck(x) {
+      z=x.split(" ");
+      var a= parseInt(z[1]);
+      if(Number.isInteger(a)){
+      dn[a - 1] = " ";
+      list();
+      }
+    }
     
   
 // The following line starts the application
