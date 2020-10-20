@@ -122,7 +122,7 @@ function quit(){
  * @returns {void}
  */
 function help(){
-  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> says hello! \n **hello+(input name)** --> says (hello name!) \n **quit/exit** --> quits app \n **list**-->displays your tasks \n **add+(the task you enter)**--> adds task to list \n **remove+(task number)--> Deletes task from list")
+  console.log("These are my supported commands:\n **help** --> Displays help menu \n **hello** --> says hello! \n **hello+(input name)** --> says (hello name!) \n **quit/exit** --> quits app \n **list**-->displays your tasks \n **add+(the task you enter)**--> adds task to list \n **remove+(task number)--> Deletes task from list \n **edit+(task number)+(new task)**--> replaces existing task with another")
   
   
   }
